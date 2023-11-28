@@ -1,0 +1,456 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/**********************************************/
+.background {
+    background-color: #F3EFEA;
+   
+}
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+.center {
+    max-width: 1160px;
+    margin: 0 auto;
+    width: 100%;
+}
+$maincolor:#323232;
+$h1color: #57463A;
+@mixin onlylarge($w)
+{
+    @media only screen and (max-width: $w)
+    {
+        @content;
+    }
+}
+/*First-container*/
+.container-first{
+    header{
+        @include onlylarge(576px) {height: 50px;}
+        height: 137px;
+    }
+    .menu ul{
+        @include onlylarge(1300px) {justify-content: end;}
+        @include onlylarge(1200px) {justify-content: space-between; width: 95%;}
+        @include onlylarge(1024px) {width: 95%;}
+        @include onlylarge(576px) {display:none}
+        display: flex;
+    }
+    .logo{
+        margin-top: 31px;
+    }
+    li{
+        margin-top: 63px;
+    }
+    
+    li:first-child{
+        @include onlylarge(1200px) {margin-right: 0px;}
+        margin-right: 82px;
+    }
+    li:nth-child(2){
+        @include onlylarge(1200px) {margin-right: 0px;}
+        margin-right: 215px;
+    }
+    li:nth-child(3){
+        @include onlylarge(1200px) {margin-right: 0px;}
+        margin-right: 271px;
+    }
+    li:nth-child(4){
+        @include onlylarge(1200px) {margin-right: 0px;}
+        margin-right: 82px;
+    }
+    a{
+        color: $maincolor;
+        text-align: center;
+        font-family: 'Open Sans';
+        font-size: 16px;
+        line-height: 150%;
+        text-decoration: none;
+        
+    }
+    .head-content{
+       h1{
+        @include onlylarge(576px) {font-size: 32px;}
+        @include onlylarge(425px) {font-size: 24px; padding-top: 35px;}
+        text-align: center;
+        padding-top: 50px;
+        color: $h1color;
+        font-family: 'Tenor Sans';
+        font-size: 48px;
+        line-height: 150%;
+       }
+       h2{
+        @include onlylarge(576px) {font-size: 32px;}
+        @include onlylarge(425px) {font-size: 24px;}
+        padding-top: 19px;
+        text-align: center;
+        color: $h1color;
+        font-family: 'Tenor Sans';
+        font-size: 48px;
+        line-height: 150%;
+       }
+       img{
+        @include onlylarge(1200px) {max-width: 95%; margin: 0 auto; display: flex;}
+        padding-top: 40px;
+        width: 1160px;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        max-width: 100%;
+       }
+    }
+    .items{
+        @include onlylarge(1200px) {width: 97%;}
+        @include onlylarge(992px) {flex-direction: column;}
+        display: flex;
+        justify-content: space-between;
+        .item{
+            
+            h1{
+                @include onlylarge(576px) {font-size: 32px;}
+                @include onlylarge(992px) {text-align: center;}
+                @include onlylarge(425px) {font-size: 24px;}
+                color: $h1color;
+                font-family: 'Tenor Sans';
+                font-size: 48px;
+                line-height: 150%;  
+            }
+            p{
+                @include onlylarge(992px) {text-align: center;}
+                color: #000;
+                font-family: 'Open Sans';
+                font-size: 16px;
+                line-height: 150%;
+            }
+        }
+    }
+    .content{
+        @include onlylarge(1200px) {column-gap: 20px;}
+        @include onlylarge(1024px) {grid-template-columns: 1fr; padding-top: 100px;}
+        @include onlylarge(768px) {padding-top: 70px;}
+        @include onlylarge(425px) {padding-top: 50px;}
+        padding-top: 160px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 40px;
+        .left-content{
+            img{
+                @include onlylarge(425px) {height: 400px;}
+                width: 560px;
+                height: 560px;
+                object-fit: cover;
+                object-position: center;
+                padding-top: 0px;
+            }
+        }
+        .right-content{
+            @include onlylarge(1200px) {width: 95%;}
+            @include onlylarge(1024px) {text-align: center; width: 99%;}
+            h1{
+                @include onlylarge(1024px) {padding-top: 25px; text-align: center;}
+                @include onlylarge(576px) {font-size: 32px;}
+                @include onlylarge(425px) {font-size: 24px;}
+                color: #000;
+                font-family: 'Tenor Sans';
+                font-size: 24px;
+                line-height: 150%;
+                padding: 0;
+                text-align: left;
+            }
+            h4{
+                margin-top: 20px;
+                color: #000;
+                font-family: 'Open Sans';
+                font-size: 16px;
+                line-height: 150%;
+            }
+            .top{
+                @include onlylarge(1200px) {padding-top: 30px;}
+                @include onlylarge(576px) {text-align: left; width: 85%; margin-left: 15px;}
+                padding-top: 50px;
+                color: #000;
+                font-family: 'Open Sans';
+                font-size: 16px;
+                line-height: 150%;
+            }
+            .mid{
+                @include onlylarge(1200px) {margin-top: 20px;}
+                @include onlylarge(576px) {text-align: left; width: 85%; margin-left: 15px;}
+                margin-top: 35px;
+                color: #000;
+                font-family: 'Open Sans';
+                font-size: 16px;
+                line-height: 150%;
+            }
+            .bottom{
+                @include onlylarge(1200px) {margin-top: 20px;}
+                @include onlylarge(576px) {text-align: left; width: 85%; margin-left: 15px;}
+                margin-top: 35px;
+                color: #000;
+                font-family: 'Open Sans';
+                font-size: 16px;
+                line-height: 150%;
+            }
+        }
+    }
+}
+/*Philosophy container*/
+.philosophy{
+    @include onlylarge(768px) {padding-bottom: 70px;}
+    @include onlylarge(425px) {padding-bottom: 50px;}
+    padding-bottom: 100px;
+    h1{
+        @include onlylarge(1024px) {padding-top: 100px; margin-left: 15px;}
+        @include onlylarge(768px) {padding-top: 70px;}
+        @include onlylarge(576px) {font-size: 32px;}
+        @include onlylarge(425px) {font-size: 24px; padding-top: 50px; padding-bottom: 50px;}
+        padding-top: 160px;
+        color: $h1color;
+        font-family: 'Tenor Sans';
+        font-size: 48px;
+        line-height: 150%;
+        padding-bottom: 70px; 
+    }
+    p{
+        @include onlylarge(1200px) {width: 95%;}
+        @include onlylarge(425px) {font-size: 18px;}
+        color: $maincolor;
+        text-align: right;
+        font-family: 'Open Sans';
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 150%;
+    }
+    
+}
+/*Application container*/
+.application{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    h1{
+        @include onlylarge(1024px) {width: 97%; text-align: center;}
+        @include onlylarge(768px) {padding-bottom: 70px;}
+        @include onlylarge(576px) {font-size: 32px;}
+        @include onlylarge(425px) {padding-bottom: 50px; font-size: 24px;}
+        color: $h1color;
+        font-family: 'Tenor Sans';
+        font-size: 48px;
+        line-height: 150%;
+        padding-bottom: 100px; 
+    }
+    .btn{
+        background-color: #A1B29F;
+        border: 0;
+        width: 245px;
+        height: 60px;
+        padding: 0;
+        border-radius: 10px;
+        button:hover{
+            background-color: rgb(75, 146, 75);
+            color: #F6F6F6;
+            transition: 0.7s;
+        }
+        a{
+            color: #F6F6F6;
+            font-family: 'Open Sans';
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 150%;
+            text-decoration: none;
+        }
+    }
+}
+/*Footer*/
+footer{
+    @include onlylarge(768px) {height: auto;}
+    @include onlylarge(425px) {margin-top: 70px;}
+    background-color:#715B4B;
+    height: 250px;
+    margin-top: 100px;
+    .footer-info{
+        @include onlylarge(1024px) {width: 95%;}
+        @include onlylarge(992px) {justify-content: space-between;}
+        @include onlylarge(768px) {display: grid; grid-template-columns: 1fr; row-gap: 27px; align-items: center; justify-items: center; padding-top: 30px;}
+        padding-top: 60px;
+        display: flex;
+        justify-content: space-around;
+        a{
+            @include onlylarge(768px) {margin-top: 15px;}
+            color: #F6F6F6;
+            font-family: 'Open Sans';
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 150%;
+            text-decoration: none;
+            display: flex;
+            padding-bottom: 9px;
+        }
+        .first-info{
+            @include onlylarge(1024px) {margin-right: 0px;}
+            margin-right: 52px;
+            p{
+                @include onlylarge(768px) {text-align: center;}
+            color: #F6F6F6;
+            font-family: 'Open Sans';
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 150%;
+            text-decoration: none;
+            }
+        }
+        .second-info{
+            @include onlylarge(1024px) {margin-right: 0px;}
+            margin-right: 76px;
+            a{
+                @include onlylarge(768px) {justify-content: center;}
+            }
+        }
+        .third-info{
+            @include onlylarge(1024px) {margin-right: 0px;}
+            margin-right: 130px;
+        }
+        .fourth-info{
+            @include onlylarge(1024px) {margin-right: 0px;}
+            @include onlylarge(768px) {display: flex; flex-direction: column; align-items: center;}
+            margin-right: 38px;
+        }
+        .soc-links{
+            display: flex;
+            .tg{
+                margin-right: 18px;
+            }
+            .inst{
+                margin-right: 18px;
+            }
+        }
+    }
+}
+/*burger-menu*/
+.menu-btn{
+    @include onlylarge(576px) {display: flex;}
+    display: none;
+    align-items: center;
+    position: absolute;
+    top: 41px;
+    right: 15px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+   
+  .menu-btn > span,
+  .menu-btn > span::before,
+  .menu-btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+    transition-duration: .25s;
+  }
+  .menu-btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu-btn > span::after {
+    content: '';
+    top: 8px;
+  }
+   
+  .menubox{
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 0 0;
+    list-style: none;
+    background-color: #F3EFEA;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    transition-duration: .25s;
+  }
+   
+  .menu-item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+  }
+  .menu-item:hover {
+    background-color: #CFD8DC;
+  }
+   
+   
+  #menu-toggle{
+    opacity: 0;
+  }
+   
+  #menu-toggle:checked ~ .menu-btn > span{
+    transform: rotate(45deg);
+  }
+  #menu-toggle:checked ~ .menu-btn > span::before{
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu-toggle:checked ~ .menu-btn > span::after{
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu-toggle:checked ~ .menubox{
+    flex-direction: column;
+    visibility: visible;
+    display: flex;
+    left: -60px;
+  }
+  label{
+    @include onlylarge(576px) {display: block;}
+  }
